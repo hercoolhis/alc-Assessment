@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ready</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="services/studentService.js"></script>
+<script type="text/javascript" src="controllers/studentController.js"></script>
+<script type="text/javascript" src="services/studentService.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+</head>
+
+
+<body ng-app="studentApp" ng-controller="studentController">
+
+	<div class="container-fluid jumbotron text-center">
+	    <div>
+	     	<h2>Student Management</h2>
+	     	<p>Create, Read, Update, Delete</p>	      
+	    </div>     
+    </div> 
+
+    	
+
+	
+<section ng-include="'sections/studentList.html'"></section>
+<section ng-include="'sections/modals.html'"></section>
+
+
+</body>
+
+
+
+
+</html>
