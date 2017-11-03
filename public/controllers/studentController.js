@@ -87,10 +87,7 @@
 			    
 			  }
 			});	
-			/*var student = $scope.studentToEdit;			
-			studentData.delete('/students/' + student._id, student).then(function(data) {								
-				getStudents();											
-			});*/
+			
 		}
 
 		$scope.goBack = function() {
