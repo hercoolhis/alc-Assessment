@@ -1,0 +1,41 @@
+
+
+             <hr>             
+              <button ng-click='goBack()' class="btn btn-success pull-left ">Back</button>              
+              
+              <button  ng-click='deleteStudent(selectedStudent)' class="btn btn-danger  pull-right">Delete</button> 
+              <button style="margin-right: 10px;" ng-click='selectStudent(selectedStudent)' class="btn btn-primary  pull-right">Edit</button>  
+              <span class='clearfix'></span>      
+             <hr>
+
+              <div  style="color : #4d2692;"   class="row">
+               
+                <div style="" class="col-sm-8 col-sm-offset-2"">
+                  <div style="background: #4d2692; color: white; font-size: 20px; margin-bottom: 20px;"  class="col-xs-12 text-center">Student Profile</div>
+                  <div class="col-xs-12 col-sm-6 text-center">
+                      <img src="images/face1.jpg" alt="" class="center-block img-circle img-responsive"/>
+                      <ul class="list-inline ratings text-center" title="Ratings">
+                        <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                        <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                        <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                        <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                        <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                      </ul>                                
+                  </div><!--/col-->
+
+                <div style="text-align: left;" class="col-xs-12 col-sm-6">
+                  <h2>{{selectedStudent.firstName}} {{selectedStudent.lastName}}</h2>
+                  
+                  <p style="color : #4d2692;"><strong>Date Of Birth: </strong> {{selectedStudent.class}}</p>
+                  <p style="color : #4d2692;"><strong>Gender: </strong> {{selectedStudent.gender}}</p>
+                  <p style="color : #4d2692;"><strong>Class: </strong> {{selectedStudent.class}}</p>
+                  <p style="color : #4d2692;"><strong>Registration Number: </strong> {{selectedStudent.registration_number}}</p>
+              </div>
+
+              <div style="text-align : left;">
+                     
+                    
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>

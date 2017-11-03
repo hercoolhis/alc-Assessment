@@ -1,0 +1,46 @@
+<div style="margin-top: 30px;" class="row">
+                                        <div class="col-sm-8 col-sm-offset-2" >
+                                        <h3 >Edit Details for {{studentToEdit.firstName}} {{studentToEdit.lastName}}</h3>  
+                                                                
+                                            <div class="">
+                                            <label for="new_admin_name">First Name</label>                                
+                                                <input class="form-control" name="new_admin_name" type="text" ng-model='studentToEdit.firstName' required>
+                                            </div> 
+                                            <div class="">
+                                            <label for="new_admin_name">Last Name</label>                                
+                                                <input class="form-control" name="new_admin_name"   type="text" ng-model='studentToEdit.lastName' required>
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label for="new_admin_type">Gender</label>
+                                              <select class="form-control" ng-model="studentToEdit.gender" id="select" required>
+                                                <option selected="selected">Select</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                              </select>
+                                            </div>
+
+                                            <div class="">
+                                            <label for="new_admin_name">Date Of Birth</label>                               
+                                                <input class="form-control" name="new_admin_name" ng-model="new_admin_name"  type="text" >
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                              <label for="new_admin_type">Class</label>
+                                              <select class="form-control" ng-model='studentToEdit.class' id="select" required>
+                                                <option selected="selected">Select</option>
+                                                <option>J.S.S. 1</option>
+                                                <option>J.S.S. 2</option>
+                                                <option>J.S.S. 3</option>
+                                                <option>S.S.S. 1</option>
+                                                <option>S.S.S. 2</option>
+                                                <option>S.S.S. 3</option>                                               
+                                           
+                                              </select>
+                                            </div>                                            
+                                          
+                                            <button type="submit" class="btn btn-success" ng-click='updateStudent()'>Submit</button> <button type="button" class="btn btn-default " style="align-self: center;" ng-click="goBack()">Back</button>                             
+                                        </div> 
+                                        </div>
