@@ -8,8 +8,12 @@
 		$scope.loadingStudents = false;
 		$scope.state = 'studentList';
 		$scope.loadingSingleStudent = false;
-
-		
+		getStudents();
+	    
+        function generateUniqueId() {
+        	var rand_Numb = Math.floor(Math.random() * 1000);
+        	return rand_Numb;
+        } 
 
 		function getStudents() {
 			
@@ -29,25 +33,28 @@
 			$scope.state = 'createStudent';			
 		};
 
-		$scope.saveStudent = function() {
-			console.log($scope.newStudent);
+		$scope.saveStudent = function() {			
 			var newStudent = $scope.newStudent;
+			console.log(newStudent.dateOfBirth);
+			newStudent.registrationNumber = newStudent.class + "-" + generateUniqueId();			
 			studentData.post('/students', newStudent).then(function(data) {
 				getStudents();
+				swal('Success', 'You have successfully added student details for ' + newStudent.firstName + ' ' + newStudent.lastName, 'success');
 				$scope.newStudent = {};					
-				$scope.state = 'studentList';		
+				$scope.state = 'studentList';
+
 			});
 		};
 
 		$scope.viewStudent = function(student) {
 			$scope.state = 'singleStudent';
 			$scope.loadingSingleStudent = true;
-			//$scope.showSingleStudent = true;
-			$scope.selectedStudent = student;			
-			/*var selectedStudentId = student._id;
+			
+			//$scope.selectedStudent = student;			
+			var selectedStudentId = student._id;
 			studentData.get('/students', selectedStudentId).then(function(data) {
 				$scope.selectedStudent = student;											
-			});*/
+			});
 		}
 
 		$scope.selectStudent = function(student) {					
@@ -58,8 +65,11 @@
 
 		$scope.updateStudent = function() {			
 			var student = $scope.studentToEdit;			
-			studentData.put('/students/' + student._id, student).then(function(data) {				
-				getStudents();											
+			studentData.put('/students/' + student._id, student).then(function(data) {
+				console.log('success');				
+				getStudents();
+				$scope.state = 'studentList';
+				swal('Success', 'You have successfully updated details for ' + student.firstName + ' ' + student.lastName, 'success');											
 			});
 		}
 
@@ -77,14 +87,15 @@
 			  closeOnCancel: true
 			},
 			function(isConfirm){
-			  if (isConfirm) {
-			    console.log('Student Deleted');
-			    var student = $scope.studentToEdit;			
+			  if (isConfirm) {			    		   		
 					studentData.delete('/students/' + student._id, student).then(function(data) {								
-						getStudents();											
+						getStudents();
+						$scope.state = 'studentList';
+						swal('Success', 'You have successfully deleted ' + student.firstName + ' ' + student.lastName, 'success');											
 					});        
 			  } else {
-			    
+
+			  	swal('Success', 'Delete Operation Cancelled ', 'success');			    
 			  }
 			});	
 			
@@ -92,6 +103,7 @@
 
 		$scope.goBack = function() {
 			$scope.state = 'studentList';
+			$scope.selectedStudent = {};
 		}
 
 		

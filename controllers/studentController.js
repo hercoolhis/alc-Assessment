@@ -38,8 +38,7 @@
 	};
 	
 
-	exports.update = function(req, res, next) {
-		console.log(req);
+	exports.update = function(req, res, next) {		
 		Student.findByIdAndUpdate(req.params.studentId, {$set:req.body}, function(err, student) {
 			if (err) {
 				return next(err);

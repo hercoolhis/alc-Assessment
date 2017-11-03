@@ -1,12 +1,12 @@
 <div ng-show="loadingStudents" class="col-sm-4 col-sm-offset-4 ">
     <div  style="padding-left : 200px;"  class="loader text-center">
-                                          <div class="loader-inner ball-clip-rotate-multiple center">
-                                            <div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                          </div>
-                                        </div>
+      <div class="loader-inner ball-clip-rotate-multiple center">
+        <div>
+        </div>
+          <div>
+          </div>
+      </div>
+    </div>
 </div>
 
 <div ng-show="showList" style="overflow-x:auto;">
@@ -16,17 +16,17 @@
         <th>Index</th>
         <th>FirstName</th>
         <th>LastName</th>
-        <th>Age</th>
-        <th>Created At</th>         
+        <th>Class</th>
+                 
       </tr>
     </thead>
     <tbody >
-      <tr ng-repeat = 'student in students'>
+      <tr ng-repeat = "student in students | orderBy: 'class':reverse">
         <td>{{ $index + 1 }}</td>
         <td>{{ student.firstName }}</td>
         <td>{{ student.lastName }}</td>
-        <td>{{ student.age }}</td>
-        <td>{{ student.created_at }}</td>
+        <td>{{ student.class }}</td>
+        
         <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#singleStudent" ng-click='viewStudent(student)'>View</button></td>
         <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editStudent" ng-click='selectStudent(student)'>Edit</button></td>
         <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteStudent" ng-click='deleteStudent(student)' >Delete</button></td>

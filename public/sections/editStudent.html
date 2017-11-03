@@ -1,4 +1,4 @@
-<div style="margin-top: 30px;" class="row">
+                                    <div style="margin-top: 30px;" class="row">
                                         <div class="col-sm-8 col-sm-offset-2" >
                                         <h3 >Edit Details for {{studentToEdit.firstName}} {{studentToEdit.lastName}}</h3>  
                                                                 
@@ -22,25 +22,28 @@
 
                                             <div class="">
                                             <label for="new_admin_name">Date Of Birth</label>                               
-                                                <input class="form-control" name="new_admin_name" ng-model="new_admin_name"  type="text" >
+                                                <input class="form-control" name="new_admin_name" ng-model="studentToEdit.dateOfBirth"  type="datetime-local" >
                                             </div>
-
-
 
                                             <div class="form-group">
                                               <label for="new_admin_type">Class</label>
                                               <select class="form-control" ng-model='studentToEdit.class' id="select" required>
                                                 <option selected="selected">Select</option>
-                                                <option>J.S.S. 1</option>
-                                                <option>J.S.S. 2</option>
-                                                <option>J.S.S. 3</option>
-                                                <option>S.S.S. 1</option>
-                                                <option>S.S.S. 2</option>
-                                                <option>S.S.S. 3</option>                                               
+                                                <option>JSS 1</option>
+                                                <option>JSS 2</option>
+                                                <option>JSS 3</option>
+                                                <option>SSS 1</option>
+                                                <option>SSS 2</option>
+                                                <option>SSS 3</option>                                               
                                            
                                               </select>
+                                            </div>
+
+                                            <div class="">
+                                            <label for="new_admin_name">Position Held</label>                               
+                                                <input class="form-control" name="studentToEdit.positionHeld"   type="text" ng-model='studentToEdit.positionHeld' required>
                                             </div>                                            
                                           
                                             <button type="submit" class="btn btn-success" ng-click='updateStudent()'>Submit</button> <button type="button" class="btn btn-default " style="align-self: center;" ng-click="goBack()">Back</button>                             
                                         </div> 
-                                        </div>
+                                    </div>

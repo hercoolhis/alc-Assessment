@@ -17,8 +17,7 @@
 		};
 
 		studentData.put = function(url, student) {			
-			return $http.put(url, student).then(function(results) {
-				console.log(results);
+			return $http.put(url, student).then(function(results) {				
 						return results.data;
 				   });
 		};
